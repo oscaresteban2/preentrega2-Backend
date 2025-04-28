@@ -1,0 +1,18 @@
+<div class="home">
+  <h1>BIENVENIDO A MI TIENDA</h1>
+  <h2>Lista de Productos</h2>
+  <ul>
+    {{#each productos}}
+    <li>Id: {{this.id}}</li>
+    <li>Titulo: {{this.titulo}}</li>
+    <li>Descripcion: {{this.descripcion}}</li>
+    <li>Precio: {{this.precio}}</li>
+    <li>Categoria: {{this.categoria}}</li>
+    <li>Estado: {{this.estado}}</li>
+    <li>Codigo: {{this.codigo}}</li>
+    <li>Existencias: {{this.existencias}}</li><br>
+    {{/each}}
+  </ul>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>

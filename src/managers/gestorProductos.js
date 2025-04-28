@@ -12,9 +12,9 @@ export default class ProductManager {
                 titulo,
                 descripcion,
                 precio,
-                imagen = [],
+                // imagen = [],
                 categoria,
-                estado = true,
+                // estado = true,
                 codigo,
                 existencias,
             } = product;
@@ -25,9 +25,9 @@ export default class ProductManager {
                 !product.titulo ||
                 !product.descripcion ||
                 !product.precio ||
-                !product.imagen ||
+                // !product.imagen ||
                 !product.categoria ||
-                !product.estado ||
+                // !product.estado ||
                 !product.codigo ||
                 !product.existencias
             ) {
@@ -51,7 +51,7 @@ export default class ProductManager {
             );
             return product;
         } catch (error) {
-            console.log(error);
+            throw new Error(`Error al añadir producto: ${error.messge}`);
         }
     };
 
@@ -94,7 +94,7 @@ export default class ProductManager {
         try {
             const products = await this.leerProductos();
             const productoBuscado = products.find((productos) => productos.id === id);
-                        
+
             if (!productoBuscado) {
                 return `No se puede encontrar el producto con el id : ${id}`;
             }
@@ -113,10 +113,10 @@ export default class ProductManager {
     eliminarProductosPorId = async (id) => {
         try {
             const products = await this.leerProductos();
-            const index = products.findIndex((p) => p.id === id);
+            const index = products.findIndex((p) => p.id === Number(id));
 
             if (index < 0) {
-                return `No se encuentra el producto con el id: ${id}`;
+                throw new Error(`No se encuentra el producto con el id: ${id}`);
             }
             products.splice(index, 1);
 

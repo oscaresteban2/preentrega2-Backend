@@ -1,0 +1,42 @@
+<div class="realtime">
+  <div class="events">
+    <div class="add">
+      <h2>Agregar Productos</h2>
+      <h4>*Todos los campos son obligatorios, Porfavor no se introduzcan datos incorrectos</h4>
+      <form id="formularionuevoproducto" class="formulario-add">
+        <input type="text" name="titulo" placeholder="Titulo" required>
+        <input type="text" name="descripcion" placeholder="Descripcion" required>
+        <input type="number" name="precio" placeholder="Precio" required>
+        <input type="text" name="codigo" placeholder="Codigo" required>
+        <input type="number" name="existencias" placeholder="Stock" required>
+        <input type="text" name="categoria" placeholder="Categoria" required>
+
+        <button id="button-add" type="submit">Agregar Producto Nuevo</button>
+      </form>
+    </div>
+  </div>
+  <div class="cart">
+    <div class="realtimeproducts">
+      <h3>MANEJO DE PRODUCTOS EN TIEMPO REAL</h3>
+      <div class="products-container-rtp">
+        <ul id="productsList">
+          {{#each productos}}
+          <li>Titulo: {{this.titulo}}</li>
+          <li>Descripcion: {{this.descripcion}}</li>
+          <li>Precio: {{this.precio}}</li>
+          <li>Categoria: {{this.categoria}}</li>
+          <li>Codigo: {{this.codigo}}</li>
+          <li>Existencias: {{this.existencias}}</li><br>
+          
+          <button class="button-delete" data-id="{{this.id}}" type="button">Eliminar Producto</button><br>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>© 2025 Preentrega2</p>
+  </footer>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/realTimeProducts.js"></script>
+</div>

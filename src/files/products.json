@@ -80,14 +80,21 @@
 		"id": 8
 	},
 	{
-		"titulo": "Prueba",
-		"descripcion": "PruebaProducto",
-		"precio": 200000,
-		"imagen": "imagen9",
-		"categoria": "prueba",
-		"estado": true,
-		"codigo": "ABC1234",
-		"existencias": 25,
+		"titulo": "camisa",
+		"descripcion": "camisa larga",
+		"precio": "20000",
+		"codigo": "09P3R60G",
+		"existencias": "15",
+		"categoria": "camisas",
 		"id": 9
+	},
+	{
+		"titulo": "pantalon",
+		"descripcion": "Pantalon de pana",
+		"precio": "30000",
+		"codigo": "sdasdas",
+		"existencias": "20",
+		"categoria": "pantalones",
+		"id": 10
 	}
 ]
